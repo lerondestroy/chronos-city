@@ -1,3 +1,7 @@
+:root {
+	--colorBody: #36FFF3;
+}
+
 * {box-sizing: border-box;}
 
 body {
@@ -5,15 +9,15 @@ body {
 }
 
 .screen {
-	position: absolute; left: 0;top: 0;width: 100%;height: 100%; background-position: center center; background-size: cover;color: #36FFF3; font-size: 24px;line-height: 1.3;font-family: 'Fira Code'; overflow: hidden;padding-bottom: 60px;
+	position: absolute; left: 0;top: 0;width: 100%;height: 100%; background-position: center center; background-size: cover;color: var(--colorBody); font-size: 24px;line-height: 1.3;font-family: 'Fira Code'; overflow: hidden;padding: 75px 60px 60px;
 
 	&.active {
-		z-index: 1;
+		z-index: 5;
 	}
 }
 
 .screen__about {
-	background: linear-gradient(292.46deg, rgba(54, 255, 243, 0.08) 28.71%, rgba(54, 255, 243, 0) 129.58%); border: 1px solid rgba(54, 255, 243, 0.56); padding: 22px 27px; color: #fff; margin: 80px 60px 20px;
+	background: linear-gradient(292.46deg, rgba(54, 255, 243, 0.08) 28.71%, rgba(54, 255, 243, 0) 129.58%); border: 1px solid rgba(54, 255, 243, 0.56); padding: 22px 27px; color: #fff; margin-bottom: 20px;
 
 	h4 {
 		font-size: 18px;margin-bottom: 1.2em;
@@ -47,12 +51,52 @@ body {
 
 .screen-1__logo {
 	z-index: 1;max-width: 430px; margin: auto 0;
+
+	img {
+		width: 660px; margin-left: -30px;
+	}
 }
 // экран 2
 .screen-2 {
-	background-image: url(../img/screen-2-bg.jpg);
+	background-image: url(../img/screen-2-bg.jpg); display: flex; flex-direction: column;
 
 	.screen__about {
 		max-width: 826px;min-height: 222px;
+	}
+
+	.hint {
+		margin-top: auto;
+	}
+}
+
+.screen-2__man {
+	position: absolute; cursor: pointer;
+}
+
+.screen-2__man-about {
+	position: absolute; background: linear-gradient(292.46deg, rgba(54, 255, 243, 0.08) 28.71%, rgba(54, 255, 243, 0) 129.58%); border: 1px solid rgba(255, 255, 255, 0.56);padding: 15px 25px 40px 13px; opacity: 0;transition: .3s; pointer-events: none;color: #fff;
+
+	.interviewed & {
+		opacity: 1; pointer-events: auto;
+	}
+
+	p {
+		white-space: nowrap;
+
+		& + p {
+			margin-top: 1.3em;
+		}
+	}
+
+	mark {
+		background: transparent; color: var(--colorBody);
+	}
+}
+
+.screen-2__man--1 {
+	left: 344px;bottom: 89px;
+
+	.screen-2__man-about {
+		right: 88px; top: -49px;
 	}
 }

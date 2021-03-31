@@ -9,7 +9,11 @@ document.querySelector('.screen-1').addEventListener('click', function(e) {
 	}, 4500);
 })
 
-
+document.querySelector('.screen-2').addEventListener('click', function(e) {
+	if (e.target.classList.contains('screen-2__man') || e.target.closest('.screen-2__man')) {
+		e.target.closest('.screen-2__man').classList.toggle('interviewed')
+	}
+})
 
 
 
