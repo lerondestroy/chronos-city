@@ -31,13 +31,22 @@ document.querySelector('.screen-5 .btn').addEventListener('click', function(e) {
 	goTo('6');
 })
 
+let repaire = 0;
+
+$('.wire').on('click', function (e) {
+	e.stopPropagation()
+	$(this).addClass('repaired');
+	repaire += 1;
+	console.log(repaire)
+
+	checkWin()
+});
+
 
 
 $('.go-home').on('click', function () {
 	goTo('1');
 });
-
-
 
 
 function goTo(screen, delay = 0) {
@@ -60,4 +69,10 @@ function goTo(screen, delay = 0) {
 		console.log(typed)
 		
 	}, delay);
+}
+
+function checkWin() {
+	if (repaire == 2) {
+		goTo('7');
+	}
 }
