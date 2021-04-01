@@ -16,16 +16,37 @@ body {
 	}
 }
 
+.screen__dialog {
+	display: grid; gap: 20px; grid-template-columns: 1fr 1fr;
+}
+
 .screen__about {
-	background: linear-gradient(292.46deg, rgba(54, 255, 243, 0.08) 28.71%, rgba(54, 255, 243, 0) 129.58%); border: 1px solid rgba(54, 255, 243, 0.56); padding: 22px 27px; color: #fff; margin-bottom: 20px;
+	background: linear-gradient(292.46deg, rgba(54, 255, 243, 0.08) 28.71%, rgba(54, 255, 243, 0) 129.58%); border: 1px solid rgba(54, 255, 243, 0.56); padding: 22px 27px; grid-column: span 2;
 
 	h4 {
 		font-size: 18px;margin-bottom: 1.2em;
 	}
 }
 
+.screen__about--fall {
+	border: none; background: transparent; max-width: 725px; padding: 0;
+}
+
+.btn {
+	display: flex;align-items: center; justify-content: center;	background: linear-gradient(292.46deg, rgba(54, 255, 243, 0.08) 28.71%, rgba(54, 255, 243, 0) 129.58%); border: 1px solid rgba(54, 255, 243, 0.56); height: 66px; transition: .3s; opacity: 0; cursor: pointer; pointer-events: none; color: #fff;
+
+	.show-btn & {
+		opacity: 1; pointer-events: auto;
+	}
+}
+
+@keyframes hint { 
+	40% {opacity: 0;}
+	80% {opacity: 1;}
+}
+
 .hint {
-	color: rgba(255, 255, 255, 0.5);z-index: 1;
+	color: rgba(255, 255, 255, 0.5);z-index: 1;animation: hint 1s infinite; 
 }
 
 // экран 1
@@ -98,5 +119,75 @@ body {
 
 	.screen-2__man-about {
 		right: 88px; top: -49px;
+	}
+}
+
+.screen-2__man--2 {
+	left: 446px;bottom:68px;
+
+	.screen-2__man-about {
+		left: 270px; top: 110px;
+	}
+}
+
+.screen-2__man--3 {
+	right: 246px;bottom:87px;pointer-events: none;
+}
+
+.screen-2__man--boss {
+	right: 42px;bottom:37px;
+
+	.screen-2__man-about {
+		right: 15px; bottom: calc(100% + 15px);
+	}
+}
+// экран 3
+.screen-3 {
+	background-image: url(../img/screen-3-bg.jpg);
+
+	.screen__dialog {
+		max-width: 745px;
+	}
+}
+// экран 4
+@keyframes plane { 
+	to {transform: translate(-45vw, -140vh)}
+}
+
+.screen-4 {
+	background-image: url(../img/screen-4-bg.jpg);
+
+	.screen__dialog {
+		max-width: 826px;
+	}
+
+	&.active {
+		.screen-4__plane {
+			animation: plane 3s linear;
+		}
+	}
+}
+
+.screen-4__plane {
+	position: absolute;left: 60%;top: 100%;
+}
+// экран 4-1
+.screen-4-1 {
+	background-image: url(../img/bg-fall.jpg);
+}
+// экран 5
+.screen-5 {
+	background-image: url(../img/screen-3-bg.jpg); display: flex; flex-direction: column;
+
+	.screen__dialog {
+		max-width: 745px;
+	}
+}
+// экран 6
+.screen-6 {
+	background-image: url(../img/screen-5-bg.jpg); display: flex; flex-direction: column;
+
+	.screen__about {
+		max-width: 540px;
 	}
 }

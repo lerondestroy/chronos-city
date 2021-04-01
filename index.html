@@ -25,7 +25,7 @@
 		<div class="hint">Кликните,чтобы продолжить</div>
 	</div>
 
-	<div class="screen screen-2">
+	<div class="screen screen-2" data-about="В городе происходит что-то странное. Найдите полковника среди людей, только он сможет обьяснить, что делать.">
 		<div class="screen__about">
 			<h4>Глава 0</h4>
 			<div id="screen-2__typed"></div>
@@ -39,8 +39,78 @@
 				<p>Должность: <mark>официант</mark></p>
 			</div>
 		</div>
+		<div class="screen-2__man screen-2__man--2">
+			<img src="img/man-2.png" alt="">
+			<div class="screen-2__man-about">
+				<p>Пол: мужской</p>
+				<p>Возраст: 30</p>
+				<p>Должность: <mark>видеограф</mark></p>
+			</div>
+		</div>
+		<div class="screen-2__man screen-2__man--3">
+			<img src="img/man-3.png" alt="">
+		</div>
+		<div class="screen-2__man screen-2__man--boss">
+			<img src="img/man-boss.png" alt="">
+			<div class="screen-2__man-about">
+				<p>Пол: мужской</p>
+				<p>Возраст: 43</p>
+				<p>Должность: <mark>полковник</mark></p>
+			</div>
+		</div>
 	</div>
 
+	<div class="screen screen-3" data-about="– Позволь представиться – я полковник Хаблот.<br><br> Слышал, ты эксперт в управлении временем. В нашем городе из-за постоянных махинаций с ним случилась аномалия: везде сбилось реальное время.">
+		<div class="screen__dialog">
+			<div class="screen__about">
+				<h4>Глава 1</h4>
+				<div id="screen-3__typed"></div>
+			</div>
+			<div class="btn">Что теперь?</div>
+		</div>
+	</div>
+
+	<div class="screen screen-4" data-about="– Из-за этого вся техника вышла из строя. Гибнут люди: аварии на ж/д путях, в небе и на дорогах.<br> Что подскажешь сделать?">
+		<div class="screen__dialog">
+			<div class="screen__about">
+				<h4>Глава 2</h4>
+				<div id="screen-4__typed"></div>
+			</div>
+			<div id="btn-to-5" class="btn">Замедлить время</div>
+			<div id="screen-4__fall" class="btn">Ускорить время</div>
+		</div>
+		<img src="img/plane.png" alt="" class="screen-4__plane">
+	</div>
+
+	<div class="screen screen-4-1" data-about="Не лучшая идея.<br> Из-за ускорения времени все аварии начали происходить еще быстрее. Пострадало больше людей, в том числе и вы с полковником.<br><br> На вас стремительно обрушился самолет и вы не успели найти укрытие.<br><br>YOU DIED.">
+		<div class="screen__dialog">
+			<div class="screen__about screen__about--fall">
+				<h4>Глава 2</h4>
+				<div id="screen-4-1__typed"></div>
+			</div>
+			<div class="btn go-home">Попробовать ещё раз</div>
+		</div>
+		<img src="img/plane.png" alt="" class="screen-4__plane">
+	</div>	
+
+	<div class="screen screen-5" data-about="Да, я тоже думал об этом. У меня есть некий предмет — Хронокомпас. Именно он контролировал все время в городе.<br><br>Сейчас он вышел из строя и нам требуется его починка.">
+		<div class="screen__dialog">
+			<div class="screen__about">
+				<h4>Глава 3</h4>
+				<div id="screen-5__typed"></div>
+			</div>
+			<div class="btn">Я помогу</div>
+		</div>
+	</div>
+
+	<div class="screen screen-6" data-about="Кликайте по элементам Хронокомпаса, чтобы починить его.">
+		<div class="screen__about">
+			<h4>Глава 4</h4>
+			<div id="screen-6__typed"></div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="js/typed.min.js"></script>
 	<script src="js/custom.js"></script>
 </body>
