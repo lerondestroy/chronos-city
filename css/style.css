@@ -106,13 +106,17 @@ body { overflow: hidden; height: 100vh; }
 
 .compass.clicked { pointer-events: none; }
 
-.compass.clicked *:not(img):not(.selected):not(.repaired):not(.compass__arrow) { pointer-events: auto; }
+.compass.clicked .to-repaire:not(.repaired) { pointer-events: auto; }
 
 .compass img { pointer-events: none; }
 
-.wire { cursor: pointer; position: absolute; -webkit-transition: opacity .3s; transition: opacity .3s; }
+.wire { cursor: pointer; position: absolute; }
 
-.wire.repaired { pointer-events: none; opacity: 0; }
+.wire img { -webkit-transition: opacity .3s; transition: opacity .3s; }
+
+.wire.repaired { pointer-events: none; }
+
+.wire.repaired img { opacity: 0; }
 
 .wire img { width: 100%; }
 
@@ -130,31 +134,35 @@ body { overflow: hidden; height: 100vh; }
 
 .compass__btn::before { content: ''; width: 100%; height: 100%; border-radius: 50%; display: block; background: linear-gradient(311.99deg, #CEEAFF 28.42%, #FFFFFF 171.32%); -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); }
 
-.compass__btn.selected { pointer-events: none; }
+.compass__btn.repaired { pointer-events: none; }
 
 .compass__btn:nth-of-type(1) { left: 266px; top: 396px; }
 
-.compass__btn:nth-of-type(1).selected { background: linear-gradient(310.99deg, #B801B9 4.32%, #B501A6 86.61%); }
+.compass__btn:nth-of-type(1).repaired { background: linear-gradient(310.99deg, #B801B9 4.32%, #B501A6 86.61%); }
 
-.compass__btn:nth-of-type(1).selected::before { background: linear-gradient(311.99deg, #B603B1 28.42%, #FFF9F9 171.32%); }
+.compass__btn:nth-of-type(1).repaired::before { background: linear-gradient(311.99deg, #B603B1 28.42%, #FFF9F9 171.32%); }
 
 .compass__btn:nth-of-type(2) { left: 316px; top: 365px; }
 
-.compass__btn:nth-of-type(2).selected { background: linear-gradient(310.99deg, #F866BD 4.32%, #F866BD 86.61%); }
+.compass__btn:nth-of-type(2).repaired { background: linear-gradient(310.99deg, #F866BD 4.32%, #F866BD 86.61%); }
 
-.compass__btn:nth-of-type(2).selected::before { background: linear-gradient(311.99deg, #F866BD 28.42%, #FFFFFF 171.32%); }
+.compass__btn:nth-of-type(2).repaired::before { background: linear-gradient(311.99deg, #F866BD 28.42%, #FFFFFF 171.32%); }
 
 .compass__btn:nth-of-type(3) { left: 347px; top: 317px; }
 
-.compass__btn:nth-of-type(3).selected { background: linear-gradient(310.99deg, #D662FF 4.32%, #E4AAFF 86.61%); }
+.compass__btn:nth-of-type(3).repaired { background: linear-gradient(310.99deg, #D662FF 4.32%, #E4AAFF 86.61%); }
 
-.compass__btn:nth-of-type(3).selected::before { background: linear-gradient(311.99deg, #E291FF 28.42%, #F2CEFF 169.08%); }
+.compass__btn:nth-of-type(3).repaired::before { background: linear-gradient(311.99deg, #E291FF 28.42%, #F2CEFF 169.08%); }
 
-@-webkit-keyframes arrow { to { -webkit-transform: translate(-50%, -50%) rotate(1turn); transform: translate(-50%, -50%) rotate(1turn); } }
+@-webkit-keyframes arrow { to { -webkit-transform: rotate(1turn); transform: rotate(1turn); } }
 
-@keyframes arrow { to { -webkit-transform: translate(-50%, -50%) rotate(1turn); transform: translate(-50%, -50%) rotate(1turn); } }
+@keyframes arrow { to { -webkit-transform: rotate(1turn); transform: rotate(1turn); } }
 
-.compass__arrow { position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); -webkit-animation: arrow 2s linear infinite; animation: arrow 2s linear infinite; }
+.compass__arrow { position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
+.compass__arrow::after { content: ''; position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 18px; height: 18px; background: #ECECEC; border-radius: 50%; -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
+
+.compass__arrow.repaired img { -webkit-animation: arrow 2s linear infinite; animation: arrow 2s linear infinite; }
 
 .screen-7 { background-image: url(../img/screen-1-bg.jpg); display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 

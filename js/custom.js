@@ -38,13 +38,8 @@ $('.compass').on('click', function (e) {
 
 
 
-	if ($(e.target).hasClass('wire')) {
+	if ($(e.target).hasClass('to-repaire')) {
 		$(e.target).addClass('repaired');
-		repaire += 1;
-	}
-
-	if ($(e.target).hasClass('compass__btn')) {
-		$(e.target).addClass('selected');
 		repaire += 1;
 	}
 
@@ -88,7 +83,7 @@ function goTo(screen, delay = 0) {
 }
 
 function checkWin() {
-	if (repaire == 6) {
+	if (repaire == 7) {
 		goTo('7');
 	}
 }
