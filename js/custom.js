@@ -1,8 +1,7 @@
 document.querySelector('.screen-1').addEventListener('click', function(e) {
 	e.currentTarget.classList.add('start')
 
-	goTo('2', 0)
-	e.currentTarget.classList.remove('start')
+	goTo('2', 4500)
 })
 
 document.querySelector('.screen-2').addEventListener('click', function(e) {
@@ -62,6 +61,7 @@ $('.go-home').on('click', function () {
 	$('.screen').removeClass('show-btn');
 	$('.to-repaire').removeClass('repaired');
 	$('.compass').removeClass('clicked');
+	$('.screen-1').removeClass('start');
 	goTo('1');
 });
 
