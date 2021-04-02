@@ -29,6 +29,10 @@ document.querySelector('#btn-to-5').addEventListener('click', function(e) {
 
 document.querySelector('.screen-5 .btn').addEventListener('click', function(e) {
 	goTo('6');
+
+	setTimeout(() => {
+		goTo('6-1');
+	}, 2000);
 })
 
 let repaire = 0;
