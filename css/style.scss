@@ -41,12 +41,12 @@ body {
 }
 
 @keyframes hint { 
-	40% {opacity: 0;}
+	40% {opacity: .4;}
 	80% {opacity: 1;}
 }
 
 .hint {
-	color: rgba(255, 255, 255, 0.5);z-index: 1;animation: hint 2 infinite; 
+	color: #fff;z-index: 1;animation: hint 2s infinite; 
 }
 
 // экран 1
@@ -198,6 +198,18 @@ body {
 
 .compass {
 	position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);
+
+	&.clicked {
+		pointer-events: none;
+
+		& *:not(img):not(.selected):not(.repaired):not(.compass__arrow) {
+			pointer-events: auto;
+		}
+	}
+
+	img {
+		pointer-events: none;
+	}
 }
 
 .wire {
@@ -206,6 +218,22 @@ body {
 	&.repaired {
 		pointer-events: none; opacity: 0;
 	}
+
+	img {
+		width: 100%;
+	}
+
+	&::before, &::after {
+		position: absolute;content: ''; width: 8px;height: 8px;border-radius: 50%;background: #CEEAFF;box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);z-index: 2;
+	}
+
+	&::before {
+		top: -6px;left: -2px;
+	}
+
+	&::after {
+		bottom: 4px; right: -4px;
+	}
 }
 
 .wire--blue {
@@ -213,7 +241,64 @@ body {
 }
 
 .wire--red {
-	top: 304px; left: 121px;width: 106px; clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 50%);
+	top: 304px; left: 121px;width: 106px; clip-path: polygon(-4px -6px, calc(100% + 4px) -6px, calc(100% + 4px) 100%, 50% 100%, -4px 50%);
+}
+
+.compass__btn {
+	width: 28px;height: 28px;border-radius: 50%;background: linear-gradient(310.99deg, #B6E0FF 4.32%, #D5EDFF 86.61%);box-shadow: 0px 0px 5px rgba(215, 248, 255, 0.5); transition: .3s; position: absolute; padding: 4px; cursor: pointer;
+
+	&::before {
+		content: ''; width: 100%;height: 100%;border-radius: 50%;display: block;background: linear-gradient(311.99deg, #CEEAFF 28.42%, #FFFFFF 171.32%);box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+	}
+
+	&.selected {
+		pointer-events: none;
+	}
+
+	&:nth-of-type(1) {
+		left: 266px;top: 396px;
+
+		&.selected {
+			background: linear-gradient(310.99deg, #B801B9 4.32%, #B501A6 86.61%);
+
+			&::before {
+				background: linear-gradient(311.99deg, #B603B1 28.42%, #FFF9F9 171.32%);
+			}
+		}
+	}
+	
+
+	&:nth-of-type(2) {
+		left: 316px;top: 365px;
+
+		&.selected {
+			background: linear-gradient(310.99deg, #F866BD 4.32%, #F866BD 86.61%);
+
+			&::before {
+				background: linear-gradient(311.99deg, #F866BD 28.42%, #FFFFFF 171.32%);
+			}
+		}
+	}
+
+	&:nth-of-type(3) {
+		left: 347px;top: 317px;
+
+		&.selected {
+			background: linear-gradient(310.99deg, #D662FF 4.32%, #E4AAFF 86.61%);
+
+			&::before {
+				background: linear-gradient(311.99deg, #E291FF 28.42%, #F2CEFF 169.08%);
+			}
+		}
+	}
+}
+
+@keyframes arrow { 
+	to {transform: translate(-50%, -50%) rotate(1turn)}
+}
+
+.compass__arrow {
+	position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%); animation: arrow 2s linear infinite; 
 }
 // экран 7
 .screen-7 {

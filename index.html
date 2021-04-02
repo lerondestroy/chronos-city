@@ -14,7 +14,7 @@
 
 </head>
 <body>
-	<div class="screen screen-1 active">
+	<div class="screen screen-1">
 		<img src="img/gate-left.png" alt="" class="screen-1__gate-left">
 		<img src="img/gate-right.png" alt="" class="screen-1__gate-right">
 
@@ -104,17 +104,25 @@
 		</div>
 	</div>
 
-	<div class="screen screen-6" data-about="Кликайте по элементам Хронокомпаса, чтобы починить его.">
+	<div class="screen screen-6 active" data-about="Кликайте по элементам Хронокомпаса, чтобы починить его.">
 		<div class="screen__about">
 			<h4>Глава 4</h4>
 			<div id="screen-6__typed"></div>
 		</div>
 
 		<div class="compass">
-			<img src="img/compass.png" alt="">
+			<img src="img/compass.svg" alt="">
 
-			<img src="img/wire-blue.png" alt="" class="wire wire--blue">
-			<img src="img/wire-red.png" alt="" class="wire wire--red">
+			<div class="wire wire--blue"><img src="img/wire-blue.png" alt=""></div>
+			<div class="wire wire--red"><img src="img/wire-red.png" alt=""></div>
+
+			<figure class="compass__btn"></figure>
+			<figure class="compass__btn"></figure>
+			<figure class="compass__btn"></figure>
+
+			<div class="compass__arrow">
+				<img src="img/arrow.svg" alt="">
+			</div>
 		</div>
 	</div>
 

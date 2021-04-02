@@ -33,12 +33,26 @@ document.querySelector('.screen-5 .btn').addEventListener('click', function(e) {
 
 let repaire = 0;
 
-$('.wire').on('click', function (e) {
+$('.compass').on('click', function (e) {
 	e.stopPropagation()
-	$(this).addClass('repaired');
-	repaire += 1;
-	console.log(repaire)
 
+
+
+	if ($(e.target).hasClass('wire')) {
+		$(e.target).addClass('repaired');
+		repaire += 1;
+	}
+
+	if ($(e.target).hasClass('compass__btn')) {
+		$(e.target).addClass('selected');
+		repaire += 1;
+	}
+
+	if ($(e.target).hasClass('compass')) {
+		$(e.target).addClass('clicked');
+		repaire += 1;
+	}
+	console.log(e.target, repaire)
 	checkWin()
 });
 
@@ -60,19 +74,21 @@ function goTo(screen, delay = 0) {
 			el.classList.remove('active');
 		});
 		screenActive.classList.add('active')
-		let typed = new Typed(`#screen-${screen}__typed`, {
-			strings: [screenAbout],
-			onComplete() {
-				screenActive.classList.add('show-btn')
-			}
-		});
-		console.log(typed)
+		if (screenAbout) {
+			let typed = new Typed(`#screen-${screen}__typed`, {
+				strings: [screenAbout],
+				onComplete() {
+					screenActive.classList.add('show-btn')
+				},
+				// typeSpeed: 30
+			});
+		}
 		
 	}, delay);
 }
 
 function checkWin() {
-	if (repaire == 2) {
+	if (repaire == 6) {
 		goTo('7');
 	}
 }

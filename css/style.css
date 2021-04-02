@@ -20,13 +20,13 @@ body { overflow: hidden; height: 100vh; }
 
 .show-btn .btn { opacity: 1; pointer-events: auto; }
 
-@-webkit-keyframes hint { 40% { opacity: 0; }
+@-webkit-keyframes hint { 40% { opacity: .4; }
   80% { opacity: 1; } }
 
-@keyframes hint { 40% { opacity: 0; }
+@keyframes hint { 40% { opacity: .4; }
   80% { opacity: 1; } }
 
-.hint { color: rgba(255, 255, 255, 0.5); z-index: 1; -webkit-animation: hint 2 infinite; animation: hint 2 infinite; }
+.hint { color: #fff; z-index: 1; -webkit-animation: hint 2s infinite; animation: hint 2s infinite; }
 
 .screen-1 { background-image: url(../img/screen-1-bg.jpg); display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; padding-left: 40px; }
 
@@ -104,13 +104,57 @@ body { overflow: hidden; height: 100vh; }
 
 .compass { position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
 
+.compass.clicked { pointer-events: none; }
+
+.compass.clicked *:not(img):not(.selected):not(.repaired):not(.compass__arrow) { pointer-events: auto; }
+
+.compass img { pointer-events: none; }
+
 .wire { cursor: pointer; position: absolute; -webkit-transition: opacity .3s; transition: opacity .3s; }
 
 .wire.repaired { pointer-events: none; opacity: 0; }
 
+.wire img { width: 100%; }
+
+.wire::before, .wire::after { position: absolute; content: ''; width: 8px; height: 8px; border-radius: 50%; background: #CEEAFF; -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); z-index: 2; }
+
+.wire::before { top: -6px; left: -2px; }
+
+.wire::after { bottom: 4px; right: -4px; }
+
 .wire--blue { top: 303px; left: 95px; width: 132px; }
 
-.wire--red { top: 304px; left: 121px; width: 106px; -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 50%); clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 50%); }
+.wire--red { top: 304px; left: 121px; width: 106px; -webkit-clip-path: polygon(-4px -6px, calc(100% + 4px) -6px, calc(100% + 4px) 100%, 50% 100%, -4px 50%); clip-path: polygon(-4px -6px, calc(100% + 4px) -6px, calc(100% + 4px) 100%, 50% 100%, -4px 50%); }
+
+.compass__btn { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(310.99deg, #B6E0FF 4.32%, #D5EDFF 86.61%); -webkit-box-shadow: 0px 0px 5px rgba(215, 248, 255, 0.5); box-shadow: 0px 0px 5px rgba(215, 248, 255, 0.5); -webkit-transition: .3s; transition: .3s; position: absolute; padding: 4px; cursor: pointer; }
+
+.compass__btn::before { content: ''; width: 100%; height: 100%; border-radius: 50%; display: block; background: linear-gradient(311.99deg, #CEEAFF 28.42%, #FFFFFF 171.32%); -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); }
+
+.compass__btn.selected { pointer-events: none; }
+
+.compass__btn:nth-of-type(1) { left: 266px; top: 396px; }
+
+.compass__btn:nth-of-type(1).selected { background: linear-gradient(310.99deg, #B801B9 4.32%, #B501A6 86.61%); }
+
+.compass__btn:nth-of-type(1).selected::before { background: linear-gradient(311.99deg, #B603B1 28.42%, #FFF9F9 171.32%); }
+
+.compass__btn:nth-of-type(2) { left: 316px; top: 365px; }
+
+.compass__btn:nth-of-type(2).selected { background: linear-gradient(310.99deg, #F866BD 4.32%, #F866BD 86.61%); }
+
+.compass__btn:nth-of-type(2).selected::before { background: linear-gradient(311.99deg, #F866BD 28.42%, #FFFFFF 171.32%); }
+
+.compass__btn:nth-of-type(3) { left: 347px; top: 317px; }
+
+.compass__btn:nth-of-type(3).selected { background: linear-gradient(310.99deg, #D662FF 4.32%, #E4AAFF 86.61%); }
+
+.compass__btn:nth-of-type(3).selected::before { background: linear-gradient(311.99deg, #E291FF 28.42%, #F2CEFF 169.08%); }
+
+@-webkit-keyframes arrow { to { -webkit-transform: translate(-50%, -50%) rotate(1turn); transform: translate(-50%, -50%) rotate(1turn); } }
+
+@keyframes arrow { to { -webkit-transform: translate(-50%, -50%) rotate(1turn); transform: translate(-50%, -50%) rotate(1turn); } }
+
+.compass__arrow { position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); -webkit-animation: arrow 2s linear infinite; animation: arrow 2s linear infinite; }
 
 .screen-7 { background-image: url(../img/screen-1-bg.jpg); display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
