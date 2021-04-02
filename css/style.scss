@@ -95,7 +95,7 @@ body {
 }
 
 .screen-2__man-about {
-	position: absolute; background: linear-gradient(292.46deg, rgba(54, 255, 243, 0.08) 28.71%, rgba(54, 255, 243, 0) 129.58%); border: 1px solid rgba(255, 255, 255, 0.56);padding: 15px 25px 40px 13px; opacity: 0;transition: .3s; pointer-events: none;color: #fff;
+	position: absolute; background: linear-gradient(292.46deg, rgba(54, 255, 243, 0.08) 28.71%, rgba(54, 255, 243, 0) 129.58%); border: 1px solid rgba(255, 255, 255, 0.56);padding: 15px 25px 40px 13px; opacity: 0;transition: .3s; pointer-events: none;color: #fff;z-index: 1;
 
 	.interviewed & {
 		opacity: 1; pointer-events: auto;
@@ -115,15 +115,21 @@ body {
 }
 
 .screen-2__man--1 {
-	left: 344px;bottom: 89px;
+	left: 23.89%;bottom: 89px;
 
 	.screen-2__man-about {
 		right: 88px; top: -49px;
 	}
+
+	@media (max-height: 850px) {
+		.screen-2__man-about {
+			top: 120px;
+		}
+	}
 }
 
 .screen-2__man--2 {
-	left: 446px;bottom:68px;
+	left: 30.97%;bottom:68px;
 
 	.screen-2__man-about {
 		left: 270px; top: 110px;
@@ -131,14 +137,20 @@ body {
 }
 
 .screen-2__man--3 {
-	right: 246px;bottom:87px;pointer-events: none;
+	right: 17.08%;bottom:87px;pointer-events: none;
 }
 
 .screen-2__man--boss {
-	right: 42px;bottom:37px;
+	right: 2.92%;bottom:37px;
 
 	.screen-2__man-about {
 		right: 15px; bottom: calc(100% + 15px);
+	}
+
+	@media (max-height: 850px) {
+		.screen-2__man-about {
+			bottom: 20%
+		}
 	}
 }
 // экран 3
@@ -194,6 +206,14 @@ body {
 	.screen__about {
 		max-width: 540px;
 	}
+
+	@media (max-width: 1580px) {
+		padding: 30px;
+
+		.screen__about {
+			max-width: 400px; padding: 15px;
+		}	
+	}
 }
 
 .compass {
@@ -207,7 +227,7 @@ body {
 		}
 	}
 
-	img {
+	img, .repaired {
 		pointer-events: none;
 	}
 }
@@ -220,8 +240,6 @@ body {
 	}
 
 	&.repaired {
-		pointer-events: none;
-
 		img {
 			opacity: 0;
 		}
@@ -257,10 +275,6 @@ body {
 
 	&::before {
 		content: ''; width: 100%;height: 100%;border-radius: 50%;display: block;background: linear-gradient(311.99deg, #CEEAFF 28.42%, #FFFFFF 171.32%);box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
-	}
-
-	&.repaired {
-		pointer-events: none;
 	}
 
 	&:nth-of-type(1) {

@@ -11,7 +11,7 @@ document.querySelector('.screen-2').addEventListener('click', function(e) {
 	}
 
 	if (e.target.closest('.screen-2__man--boss')) {
-		goTo('3', 0);
+		goTo('3', 1000);
 	}
 })
 
@@ -32,7 +32,7 @@ document.querySelector('.screen-5 .btn').addEventListener('click', function(e) {
 
 	setTimeout(() => {
 		goTo('6-1');
-	}, 2000);
+	}, 15000);
 })
 
 let repaire = 0;
@@ -58,14 +58,22 @@ $('.compass').on('click', function (e) {
 
 
 $('.go-home').on('click', function () {
+	$('.screen-2__man').removeClass('interviewed');
+	$('.screen').removeClass('show-btn');
+	$('.to-repaire').removeClass('repaired');
+	$('.compass').removeClass('clicked');
 	goTo('1');
 });
 
+let typed;
 
 function goTo(screen, delay = 0) {
 	let 	screenActive = document.querySelector(`.screen-${screen}`),
 			screenAbout = screenActive.dataset.about;
 
+	if (typed) {
+		typed.destroy()
+	}
 
 	setTimeout(() => {
 
@@ -74,13 +82,15 @@ function goTo(screen, delay = 0) {
 		});
 		screenActive.classList.add('active')
 		if (screenAbout) {
-			let typed = new Typed(`#screen-${screen}__typed`, {
+			typed = new Typed(`#screen-${screen}__typed`, {
 				strings: [screenAbout],
 				onComplete() {
 					screenActive.classList.add('show-btn')
+					typed.stop()
 				},
 				// typeSpeed: 30
 			});
+			
 		}
 		
 	}, delay);

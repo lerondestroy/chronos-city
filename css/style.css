@@ -50,7 +50,7 @@ body { overflow: hidden; height: 100vh; }
 
 .screen-2__man { position: absolute; cursor: pointer; }
 
-.screen-2__man-about { position: absolute; background: linear-gradient(292.46deg, rgba(54, 255, 243, 0.08) 28.71%, rgba(54, 255, 243, 0) 129.58%); border: 1px solid rgba(255, 255, 255, 0.56); padding: 15px 25px 40px 13px; opacity: 0; -webkit-transition: .3s; transition: .3s; pointer-events: none; color: #fff; }
+.screen-2__man-about { position: absolute; background: linear-gradient(292.46deg, rgba(54, 255, 243, 0.08) 28.71%, rgba(54, 255, 243, 0) 129.58%); border: 1px solid rgba(255, 255, 255, 0.56); padding: 15px 25px 40px 13px; opacity: 0; -webkit-transition: .3s; transition: .3s; pointer-events: none; color: #fff; z-index: 1; }
 
 .interviewed .screen-2__man-about { opacity: 1; pointer-events: auto; }
 
@@ -60,19 +60,23 @@ body { overflow: hidden; height: 100vh; }
 
 .screen-2__man-about mark { background: transparent; color: var(--colorBody); }
 
-.screen-2__man--1 { left: 344px; bottom: 89px; }
+.screen-2__man--1 { left: 23.89%; bottom: 89px; }
 
 .screen-2__man--1 .screen-2__man-about { right: 88px; top: -49px; }
 
-.screen-2__man--2 { left: 446px; bottom: 68px; }
+@media (max-height: 850px) { .screen-2__man--1 .screen-2__man-about { top: 120px; } }
+
+.screen-2__man--2 { left: 30.97%; bottom: 68px; }
 
 .screen-2__man--2 .screen-2__man-about { left: 270px; top: 110px; }
 
-.screen-2__man--3 { right: 246px; bottom: 87px; pointer-events: none; }
+.screen-2__man--3 { right: 17.08%; bottom: 87px; pointer-events: none; }
 
-.screen-2__man--boss { right: 42px; bottom: 37px; }
+.screen-2__man--boss { right: 2.92%; bottom: 37px; }
 
 .screen-2__man--boss .screen-2__man-about { right: 15px; bottom: calc(100% + 15px); }
+
+@media (max-height: 850px) { .screen-2__man--boss .screen-2__man-about { bottom: 20%; } }
 
 .screen-3 { background-image: url(../img/screen-3-bg.jpg); }
 
@@ -102,19 +106,20 @@ body { overflow: hidden; height: 100vh; }
 
 .screen-6 .screen__about { max-width: 540px; }
 
+@media (max-width: 1580px) { .screen-6 { padding: 30px; }
+  .screen-6 .screen__about { max-width: 400px; padding: 15px; } }
+
 .compass { position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
 
 .compass.clicked { pointer-events: none; }
 
 .compass.clicked .to-repaire:not(.repaired) { pointer-events: auto; }
 
-.compass img { pointer-events: none; }
+.compass img, .compass .repaired { pointer-events: none; }
 
 .wire { cursor: pointer; position: absolute; }
 
 .wire img { -webkit-transition: opacity .3s; transition: opacity .3s; }
-
-.wire.repaired { pointer-events: none; }
 
 .wire.repaired img { opacity: 0; }
 
@@ -133,8 +138,6 @@ body { overflow: hidden; height: 100vh; }
 .compass__btn { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(310.99deg, #B6E0FF 4.32%, #D5EDFF 86.61%); -webkit-box-shadow: 0px 0px 5px rgba(215, 248, 255, 0.5); box-shadow: 0px 0px 5px rgba(215, 248, 255, 0.5); -webkit-transition: .3s; transition: .3s; position: absolute; padding: 4px; cursor: pointer; }
 
 .compass__btn::before { content: ''; width: 100%; height: 100%; border-radius: 50%; display: block; background: linear-gradient(311.99deg, #CEEAFF 28.42%, #FFFFFF 171.32%); -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); }
-
-.compass__btn.repaired { pointer-events: none; }
 
 .compass__btn:nth-of-type(1) { left: 266px; top: 396px; }
 
