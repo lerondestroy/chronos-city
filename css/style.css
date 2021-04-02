@@ -64,19 +64,25 @@ body { overflow: hidden; height: 100vh; }
 
 .screen-2__man--1 .screen-2__man-about { right: 88px; top: -49px; }
 
-@media (max-height: 850px) { .screen-2__man--1 .screen-2__man-about { top: 120px; } }
+@media (max-height: 850px) { .screen-2__man--1 { bottom: 44px; }
+  .screen-2__man--1 .screen-2__man-about { top: 120px; } }
 
 .screen-2__man--2 { left: 30.97%; bottom: 68px; }
 
 .screen-2__man--2 .screen-2__man-about { left: 270px; top: 110px; }
 
+@media (max-height: 850px) { .screen-2__man--2 { bottom: 34px; } }
+
 .screen-2__man--3 { right: 17.08%; bottom: 87px; pointer-events: none; }
+
+@media (max-height: 850px) { .screen-2__man--3 { bottom: 44px; } }
 
 .screen-2__man--boss { right: 2.92%; bottom: 37px; }
 
 .screen-2__man--boss .screen-2__man-about { right: 15px; bottom: calc(100% + 15px); }
 
-@media (max-height: 850px) { .screen-2__man--boss .screen-2__man-about { bottom: 20%; } }
+@media (max-height: 850px) { .screen-2__man--boss { bottom: 18px; }
+  .screen-2__man--boss .screen-2__man-about { bottom: 20%; } }
 
 .screen-3 { background-image: url(../img/screen-3-bg.jpg); }
 
@@ -166,6 +172,14 @@ body { overflow: hidden; height: 100vh; }
 .compass__arrow::after { content: ''; position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 18px; height: 18px; background: #ECECEC; border-radius: 50%; -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); }
 
 .compass__arrow.repaired img { -webkit-animation: arrow 2s linear infinite; animation: arrow 2s linear infinite; }
+
+@-webkit-keyframes stars { to { -webkit-transform: translate(-50%, -50%) scale(1.7); transform: translate(-50%, -50%) scale(1.7); } }
+
+@keyframes stars { to { -webkit-transform: translate(-50%, -50%) scale(1.7); transform: translate(-50%, -50%) scale(1.7); } }
+
+.compass__stars { position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%) scale(0); transform: translate(-50%, -50%) scale(0); pointer-events: none; }
+
+.clicked .compass__stars { -webkit-animation: stars 2s infinite; animation: stars 2s infinite; }
 
 .screen-7 { background-image: url(../img/screen-1-bg.jpg); display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 

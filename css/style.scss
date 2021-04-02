@@ -122,6 +122,8 @@ body {
 	}
 
 	@media (max-height: 850px) {
+		bottom: 44px;
+
 		.screen-2__man-about {
 			top: 120px;
 		}
@@ -134,10 +136,18 @@ body {
 	.screen-2__man-about {
 		left: 270px; top: 110px;
 	}
+
+	@media (max-height: 850px) {
+		bottom: 34px;
+	}
 }
 
 .screen-2__man--3 {
 	right: 17.08%;bottom:87px;pointer-events: none;
+
+	@media (max-height: 850px) {
+		bottom: 44px;
+	}
 }
 
 .screen-2__man--boss {
@@ -148,6 +158,8 @@ body {
 	}
 
 	@media (max-height: 850px) {
+		bottom: 18px;
+
 		.screen-2__man-about {
 			bottom: 20%
 		}
@@ -329,6 +341,18 @@ body {
 		img {
 			animation: arrow 2s linear infinite; 
 		}
+	}
+}
+
+@keyframes stars { 
+	to {transform: translate(-50%, -50%) scale(1.7)}
+}
+
+.compass__stars {
+	position: absolute;left: 50%; top: 50%;transform: translate(-50%, -50%) scale(0); pointer-events: none;
+
+	.clicked & {
+		animation: stars 2s infinite; 
 	}
 }
 // экран 7
