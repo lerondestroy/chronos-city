@@ -71,12 +71,10 @@ function goTo(screen, delay = 0) {
 	let 	screenActive = document.querySelector(`.screen-${screen}`),
 			screenAbout = screenActive.dataset.about;
 
-	if (typed) {
-		typed.destroy()
-	}
-
 	setTimeout(() => {
-
+		if (typed) {
+			typed.destroy()
+		}
 		document.querySelectorAll('.screen').forEach(el => {
 			el.classList.remove('active');
 		});
