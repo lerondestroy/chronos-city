@@ -1,7 +1,7 @@
 document.querySelector('.screen-1').addEventListener('click', function(e) {
 	e.currentTarget.classList.add('start')
 
-	goTo('2', 4500)
+	goTo('2', document.documentElement.clientWidth > 992 ? 4500 : 0)
 })
 
 document.querySelector('.screen-2').addEventListener('click', function(e) {

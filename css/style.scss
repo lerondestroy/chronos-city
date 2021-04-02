@@ -14,6 +14,10 @@ body {
 	&.active {
 		z-index: 5;
 	}
+
+	@media (max-width: 991px) {
+		padding: 15px; font-size: 16px;
+	}
 }
 
 .screen__dialog {
@@ -25,6 +29,10 @@ body {
 
 	h4 {
 		font-size: 18px;margin-bottom: 1.2em;
+	}
+
+	@media (max-width: 991px) {
+		padding: 10px;
 	}
 }
 
@@ -59,6 +67,10 @@ body {
 
 	.start & {
 		transform: rotateY(90deg);
+	}
+
+	@media (max-width: 991px) {
+		display: none;
 	}
 }
 
@@ -128,6 +140,14 @@ body {
 			top: 120px;
 		}
 	}
+
+	@media (max-width: 991px) {
+		left: 15px;
+
+		.screen-2__man-about {
+			right: auto; left: 0; top: -49px;
+		}
+	}
 }
 
 .screen-2__man--2 {
@@ -139,6 +159,14 @@ body {
 
 	@media (max-height: 850px) {
 		bottom: 34px;
+	}
+
+	@media (max-width: 991px) {
+		left: 150px;
+
+		.screen-2__man-about {
+			left: 50px; top: 150px;
+		}
 	}
 }
 
@@ -162,6 +190,14 @@ body {
 
 		.screen-2__man-about {
 			bottom: 20%
+		}
+	}
+
+	@media (max-width: 991px) {
+		right: -100px;
+
+		.screen-2__man-about {
+			right: 115px;
 		}
 	}
 }

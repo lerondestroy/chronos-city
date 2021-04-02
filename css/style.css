@@ -8,11 +8,15 @@ body { overflow: hidden; height: 100vh; }
 
 .screen.active { z-index: 5; }
 
+@media (max-width: 991px) { .screen { padding: 15px; font-size: 16px; } }
+
 .screen__dialog { display: -ms-grid; display: grid; gap: 20px; -ms-grid-columns: 1fr 1fr; grid-template-columns: 1fr 1fr; position: relative; z-index: 2; }
 
 .screen__about { background: linear-gradient(292.46deg, rgba(54, 255, 243, 0.08) 28.71%, rgba(54, 255, 243, 0) 129.58%); border: 1px solid rgba(54, 255, 243, 0.56); padding: 22px 27px; grid-column: span 2; position: relative; z-index: 2; }
 
 .screen__about h4 { font-size: 18px; margin-bottom: 1.2em; }
+
+@media (max-width: 991px) { .screen__about { padding: 10px; } }
 
 .screen__about--fall { border: none; background: transparent; max-width: 725px; padding: 0; }
 
@@ -33,6 +37,8 @@ body { overflow: hidden; height: 100vh; }
 .screen-1__gate-left, .screen-1__gate-right { position: absolute; top: 0; width: 41%; -webkit-transition: 4s; transition: 4s; }
 
 .start .screen-1__gate-left, .start .screen-1__gate-right { -webkit-transform: rotateY(90deg); transform: rotateY(90deg); }
+
+@media (max-width: 991px) { .screen-1__gate-left, .screen-1__gate-right { display: none; } }
 
 .screen-1__gate-left { left: 0; -webkit-transform-origin: left center; transform-origin: left center; }
 
@@ -67,11 +73,17 @@ body { overflow: hidden; height: 100vh; }
 @media (max-height: 850px) { .screen-2__man--1 { bottom: 44px; }
   .screen-2__man--1 .screen-2__man-about { top: 120px; } }
 
+@media (max-width: 991px) { .screen-2__man--1 { left: 15px; }
+  .screen-2__man--1 .screen-2__man-about { right: auto; left: 0; top: -49px; } }
+
 .screen-2__man--2 { left: 30.97%; bottom: 68px; }
 
 .screen-2__man--2 .screen-2__man-about { left: 270px; top: 110px; }
 
 @media (max-height: 850px) { .screen-2__man--2 { bottom: 34px; } }
+
+@media (max-width: 991px) { .screen-2__man--2 { left: 150px; }
+  .screen-2__man--2 .screen-2__man-about { left: 50px; top: 150px; } }
 
 .screen-2__man--3 { right: 17.08%; bottom: 87px; pointer-events: none; }
 
@@ -83,6 +95,9 @@ body { overflow: hidden; height: 100vh; }
 
 @media (max-height: 850px) { .screen-2__man--boss { bottom: 18px; }
   .screen-2__man--boss .screen-2__man-about { bottom: 20%; } }
+
+@media (max-width: 991px) { .screen-2__man--boss { right: -100px; }
+  .screen-2__man--boss .screen-2__man-about { right: 115px; } }
 
 .screen-3 { background-image: url(../img/screen-3-bg.jpg); }
 
